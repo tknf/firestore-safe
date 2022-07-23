@@ -1,0 +1,60 @@
+{
+  "name": "@tknf/firestore-safe",
+  "version": "0.1.0",
+  "description": "Firestore Simple for new Firebase SDK",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tknf/firestore-safe"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "keywords": [
+    "firebase",
+    "firebase-admin",
+    "firestore",
+    "database",
+    "NoSQL",
+    "FirestoreSimple"
+  ],
+  "author": "TKNF LLC <developers@tknf.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tknf/firestore-safe/issues"
+  },
+  "homepage": "https://github.com/tknf/firestore-safe/tree/main/#readme",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc --project .",
+    "test": "jest",
+    "test:ci": "firebase emulators:exec --only firesotre 'jest --forceExit --coverage'",
+    "example:ci": "tsc --project example",
+    "emulators:start": "firebase emulators:start --only firestore",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "@tknf/prettier-config": "^1.0.7",
+    "@types/jest": "^28.1.6",
+    "firebase-admin": "^10.0.0",
+    "firebase-tools": "^11.3.0",
+    "jest": "^28.1.3",
+    "jest-junit": "^14.0.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.7.4"
+  },
+  "peerDependencies": {
+    "firebase-admin": "^10.0.0"
+  },
+  "dependencies": {
+    "utility-types": "^3.10.0"
+  },
+  "prettier": "@tknf/prettier-config"
+}
